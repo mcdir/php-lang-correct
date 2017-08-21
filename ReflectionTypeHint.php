@@ -59,7 +59,10 @@ class ReflectionTypeHint
 		if (! assert_options(ASSERT_ACTIVE)) return true;
 		$bt = self::debugBacktrace(null, 1);
 		extract($bt);  //to $file, $line, $function, $class, $object, $type, $args
-		if (! $args) return true; #speed improve
+		if (! $args) {
+		    echo "nothing to do\n";
+		    return true;
+        } #speed improve
 		$r = new ReflectionMethod($class, $function);
 		$doc = $r->getDocComment();
 		$cache_id = $class. $type. $function;

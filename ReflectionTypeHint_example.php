@@ -1,4 +1,7 @@
 <?php
+
+require_once 'ReflectionTypeHint.php';
+
 class Example
 {
 	/**
@@ -18,6 +21,7 @@ class Example
 	}
 }
 
+$e = null;
 Example::myMethod('sss', 75467, $e, true);
 $e = new Example();
 //$e->myMethod('sss', 75467, new Exception(), true);
